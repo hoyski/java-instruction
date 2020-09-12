@@ -14,7 +14,7 @@ public class TravelTimeCalculatorApp {
 			System.out.print("Enter miles:            ");
 			double miles = sc.nextDouble();
 
-			System.out.println("Enter miles per hour: ");
+			System.out.print("Enter miles per hour: ");
 			double mph = sc.nextDouble();
 
 			int hours = (int) (miles / mph);
