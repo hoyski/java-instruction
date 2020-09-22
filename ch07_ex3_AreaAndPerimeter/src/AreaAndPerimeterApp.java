@@ -18,11 +18,20 @@ public class AreaAndPerimeterApp {
 			System.out.print("Enter width:  ");
 			double width = Double.parseDouble(sc.nextLine());
 
-			Rectangle rectangle = new Rectangle(length, width);
+			// Rectangle r = new Rectangle();
+			// r.setLength(length);
+			// r.setWidth(width);
+			Rectangle r = new Rectangle(length, width);
 
-			// display output
-			String message = "Area:         " + rectangle.getAreaFormatted() + "\n" + "Perimeter:    "
-					+ rectangle.getPerimeterFormatted() + "\n";
+			// calculate total
+			double area = width * length;
+			double perimeter = 2 * width + 2 * length;
+
+			// format and display output
+			NumberFormat number = NumberFormat.getNumberInstance();
+			number.setMinimumFractionDigits(3);
+			String message = "Area:         " + r.getAreaFormatted() + "\n" + "Perimeter:    "
+					+ number.format(perimeter) + "\n";
 			System.out.println(message);
 
 			// see if the user wants to continue
@@ -30,6 +39,7 @@ public class AreaAndPerimeterApp {
 			choice = sc.nextLine();
 			System.out.println();
 		}
-		System.out.println("Bye!");
+
+		System.out.println("Bye! Created " + Rectangle.getInstanceCount() + " Rectangles");
 	}
 }
