@@ -1,34 +1,45 @@
 public class PersonManagerApp {
 	public static void main(String[] args) {
+		System.out.println("Welcome to the Person Manager");
 		
-		//
-		// Declare a Person reference variable
-		//
-		// while the user wants to continue {
-		//   prompt the user to enter a C or E
-		//   if the user didn't enter a C or E {
-		//     output an error message
-		//     use the continue; keyword to go back to the top of the loop
-		//   }
-		//   prompt the user for a first name
-		//   prompt the user for a last name
-		//   if the user entered C {
-		//     declare a new Customer instance
-		//     prompt the user for a customer number
-		//     set the customer number into the Customer instance
-		//     set the Person reference declared before the loop equal to the Customer instance
-		//   }
-		//   else {
-		//     declare a new Employee instance
-		//     prompt the user for an SSN
-		//     set the SSN into the Employee instance
-		//     set the Person reference declared before the loop equal to the Employee instance
-		//   }
-		//   set the first name into the Person reference
-		//   set the last name into the Person reference
-		//   print the Person reference
-		//
-		//   prompt the user whether they want to continue
-		// }
+		String choice = "y";
+		while (choice.equalsIgnoreCase("y")) {
+			String custOrEmp = Console.getString("Create customer or employee? (c/e) ");
+			
+			boolean isValid = false;
+			if (custOrEmp.equalsIgnoreCase("C") || custOrEmp.equalsIgnoreCase("E")) {
+				isValid = true;
+			} 
+			
+			if (!isValid) {
+				System.out.println("Error! This entry is required. Try again.");
+				continue;
+			}
+			
+			String firstName = Console.getString("First name: ");
+			String lastName = Console.getString("Last name: ");
+			
+			Person p;
+			
+			if (custOrEmp.equalsIgnoreCase("C")) {
+				String custNum = Console.getString("Customer number: ");
+				
+				Customer customer = new Customer(firstName, lastName, custNum);
+				
+				System.out.println("You entered a new Customer");
+				p = customer;
+			} else {
+				String ssn = Console.getString("SSN: ");
+				
+				Employee employee = new Employee(firstName, lastName, ssn);
+				
+				System.out.println("You entered a new Employee");
+				p = employee;
+			}
+			
+			System.out.println(p);
+			
+			choice = Console.getString("Continue? (y/n)");
+		}
 	}
 }
