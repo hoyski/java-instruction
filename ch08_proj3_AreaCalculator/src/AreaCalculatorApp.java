@@ -12,36 +12,50 @@ public class AreaCalculatorApp {
 		while (choice.equalsIgnoreCase("y")) {
 			String csr = Console.getString("Calculate area of circle, square or rectange? (c/s/r)");
 
-			switch (csr) {
-			case "c":
-			case "C":
+			if (csr.equalsIgnoreCase("c")) {
 				double radius = Console.getDouble("Enter radius: ");
 				Circle circle = new Circle(radius);
 				printArea("Circle", circle);
-
-				break;
-
-			case "s":
-			case "S":
+			} else if (csr.equalsIgnoreCase("s")) {
 				double squareWidth = Console.getDouble("Enter width: ");
 				Square square = new Square(squareWidth);
 				printArea("Square", square);
-
-				break;
-
-			case "r":
-			case "R":
-				double rectangleWidth = Console.getDouble("Enter width: ");
-				double height = Console.getDouble("Enter height: ");
-				Rectangle rectangle = new Rectangle(rectangleWidth, height);
-				printArea("Rectangle", rectangle);
-
-				break;
 			}
+
+//			switch (csr) {
+//			case "c":
+//			case "C":
+//				double radius = Console.getDouble("Enter radius: ");
+//				Circle circle = new Circle(radius);
+//				printArea("Circle", circle);
+//
+//				break;
+//
+//			case "s":
+//			case "S":
+//				double squareWidth = Console.getDouble("Enter width: ");
+//				Square square = new Square(squareWidth);
+//				printArea("Square", square);
+//
+//				break;
+//
+//			case "r":
+//			case "R":
+//				double rectangleWidth = Console.getDouble("Enter width: ");
+//				double height = Console.getDouble("Enter height: ");
+//				Rectangle rectangle = new Rectangle(rectangleWidth, height);
+//				rectangle.setHeight(17.0);
+//				printArea("Rectangle", rectangle);
+//
+//				break;
+//				
+//			default:
+//				System.out.println("Input is invalid");
+//				break;
+//			}
 
 			choice = Console.getString("Continue? (y/n) ");
 		}
-
 	}
 
 }
