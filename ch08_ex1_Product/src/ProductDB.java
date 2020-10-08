@@ -10,18 +10,17 @@ public class ProductDB {
 
 		if (productCode.equalsIgnoreCase("java") || productCode.equalsIgnoreCase("jsp")
 				|| productCode.equalsIgnoreCase("mysql")) {
-			Book b = new Book();
+			Book b = null;
 			if (productCode.equalsIgnoreCase("java")) {
-				b.setCode(productCode);
-				b.setDescription("Murach's Java Programming");
-				b.setPrice(57.50);
-				b.setAuthor("Joel Murach");
+				b = new Book(productCode, "Murach's Java Programming", 57.50, "Joel Murach");
 			} else if (productCode.equalsIgnoreCase("jsp")) {
+				b = new Book();
 				b.setCode(productCode);
 				b.setDescription("Murach's Java Servlets and JSP");
 				b.setPrice(57.50);
 				b.setAuthor("Mike Urban");
 			} else if (productCode.equalsIgnoreCase("mysql")) {
+				b = new Book();
 				b.setCode(productCode);
 				b.setDescription("Murach's MySQL");
 				b.setPrice(54.50);

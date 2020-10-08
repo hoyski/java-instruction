@@ -1,23 +1,27 @@
 public class Book extends Product {
 
-    private String author;
+	private String author;
 
-    public Book() {
-        super();
-        author = "";
-        count++;
-    }
+	public Book() {
+		super();
+		author = "";
+	}
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+	public Book(String code, String description, double price, String author) {
+		super(code, description, price);
+		this.author = author;
+	}
 
-    public String getAuthor() {
-        return author;
-    }
+	public void setAuthor(String author) {
+		this.author = author;
+	}
 
-    @Override
-    public String toString() {
-        return super.toString() + " by " + author;
-    }
+	public String getAuthor() {
+		return author;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " by " + author;
+	}
 }

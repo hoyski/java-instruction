@@ -8,7 +8,6 @@ public class Album extends Product {
 	public Album() {
 		super();
 		artist = "";
-		count++;
 	}
 
 	// Getters and setters
