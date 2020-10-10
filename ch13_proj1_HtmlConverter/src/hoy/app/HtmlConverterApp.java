@@ -16,17 +16,19 @@ public class HtmlConverterApp {
 		// Replace list items with asterisks
 		html = html.replace("<li>", "* ");
 
+		StringBuilder htmlBldr = new StringBuilder(html);
+
 		// Remove HTML tags
 		int beginTagIndex = 0;
 		while (beginTagIndex != -1) {
-			beginTagIndex = html.indexOf("<");
+			beginTagIndex = htmlBldr.indexOf("<");
 			if (beginTagIndex != -1) {
-				int endTagIndex = html.indexOf(">", beginTagIndex + 1);
-				String beforeTag = html.substring(0, beginTagIndex);
-				String afterTag = html.substring(endTagIndex + 1);
-				html = beforeTag + afterTag;
+				int endTagIndex = htmlBldr.indexOf(">", beginTagIndex + 1);
+				htmlBldr.delete(beginTagIndex, endTagIndex + 1);
 			}
 		}
+
+		html = htmlBldr.toString();
 
 		// Remove blank lines
 		html = html.replace("\n\n", "\n");
