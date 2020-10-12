@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Console.java&apos; to &apos;ch09_proj2_AccountBalanceCalculator/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;ch08_proj3_AreaCalculator&apos;&#x0D;&#x0A;- Destination element: &apos;ch09_proj2_AccountBalanceCalculator/src/(default package)&apos;&#x0D;&#x0A;- Original element: &apos;Console.java&apos;" description="Copy compilation unit" destination="=ch09_proj2_AccountBalanceCalculator/src&lt;" element1="/src&lt;{Console.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1601334121400" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,17 @@
+package hoy.app;
+
+public class StringBuilderApp {
+
+	public static void main(String[] args) {
+
+		StringBuilder ccNumber = new StringBuilder();
+		ccNumber.append("4012");
+		ccNumber.append("8888");
+
+		System.out.println(ccNumber);
+		System.out.println(ccNumber.length());
+		
+
+	}
+
+}

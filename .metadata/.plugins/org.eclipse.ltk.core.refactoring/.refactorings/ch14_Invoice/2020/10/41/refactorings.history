@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Console.java&apos; to &apos;hoy.app.PrimeNumberCheckerApp.java&apos;&#x0D;&#x0A;- Original project: &apos;ch14_Invoice&apos;&#x0D;&#x0A;- Destination element: &apos;hoy.app.PrimeNumberCheckerApp.java&apos;&#x0D;&#x0A;- Original element: &apos;murach.ui.Console.java&apos;" description="Copy compilation unit" destination="=ch12_proj1_PrimeNumberChecker/src&lt;hoy.app{PrimeNumberCheckerApp.java" element1="/src&lt;murach.ui{Console.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1602356104266" units="1" version="1.0"/>
+</session>

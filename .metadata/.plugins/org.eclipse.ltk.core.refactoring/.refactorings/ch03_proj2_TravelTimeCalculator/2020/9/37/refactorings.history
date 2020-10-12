@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;TimeTravelCalculatorApp&apos; to &apos;TravelTimeCalculatorApp&apos;&#x0D;&#x0A;- Original project: &apos;ch03_proj2_TravelTimeCalculator&apos;&#x0D;&#x0A;- Original element: &apos;TimeTravelCalculatorApp&apos;&#x0D;&#x0A;- Renamed element: &apos;TravelTimeCalculatorApp&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;TimeTravelCalculatorApp&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{TimeTravelCalculatorApp.java[TimeTravelCalculatorApp" matchStrategy="1" name="TravelTimeCalculatorApp" qualified="false" references="true" similarDeclarations="false" stamp="1599495904565" textual="false" version="1.0"/>
+</session>

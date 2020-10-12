@@ -1,0 +1,5 @@
+package hoy.business;
+
+public class EmailRecipient {
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;formatedPercent&apos; in &apos;InstructionApp.main(...)&apos; to &apos;formattedPercent&apos;&#x0D;&#x0A;- Original project: &apos;ch03_instruction&apos;&#x0D;&#x0A;- Original element: &apos;InstructionApp.main(String[]).formatedPercent&apos;&#x0D;&#x0A;- Renamed element: &apos;formatedPercent&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;formatedPercent&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{InstructionApp.java[InstructionApp~main~\[QString;@formatedPercent!205!258!212!226!QString;!0!false" name="formattedPercent" references="true" stamp="1599095779472" version="1.0"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;fullLine&apos; in &apos;CalculatorApp.main(...)&apos; to &apos;sentence&apos;&#x0D;&#x0A;- Original project: &apos;Calculator&apos;&#x0D;&#x0A;- Original element: &apos;CalculatorApp.main(String[]).fullLine&apos;&#x0D;&#x0A;- Renamed element: &apos;fullLine&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;fullLine&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{CalculatorApp.java[CalculatorApp~main~\[QString;@fullLine!380!407!387!394!QString;!0!false" name="sentence" references="true" stamp="1599059995692" version="1.0"/>
+</session>

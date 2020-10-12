@@ -1,0 +1,9 @@
+package hoy.app;
+
+import java.time.LocalDate;
+
+public class DateTimeApp {
+
+	LocalDate currentDate = LocalDate.now();
+	System.out.println(currentDate);
+}

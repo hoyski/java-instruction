@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MPGApp.java&apos; to &apos;ch03_ex1_MPG/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;ch03_ex1_MPG&apos;&#x0D;&#x0A;- Destination element: &apos;ch03_ex1_MPG/src/(default package)&apos;&#x0D;&#x0A;- Original element: &apos;MPGApp.java&apos;" description="Copy compilation unit" destination="/src&lt;" element1="/src&lt;{MPGApp.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1599073266817" units="1" version="1.0"/>
+</session>
