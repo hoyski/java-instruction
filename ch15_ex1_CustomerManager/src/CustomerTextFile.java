@@ -10,7 +10,7 @@ public final class CustomerTextFile implements DAO<Customer> {
 
 	private final String FIELD_SEP = "\t";
 
-	public CustomerTextFile() {
+	public CustomerTextFile() throws IOException {
 		customersPath = Paths.get("customers.txt");
 		customersFile = customersPath.toFile();
 
@@ -19,7 +19,7 @@ public final class CustomerTextFile implements DAO<Customer> {
 	}
 
 	@Override
-	public List<Customer> getAll() {
+	public List<Customer> getAll() throws IOException {
 		// if the customers file has already been read, don't read it again
 		if (customers != null) {
 			return customers;
@@ -29,33 +29,25 @@ public final class CustomerTextFile implements DAO<Customer> {
 
 		// load the array list with Customer objects created from
 		// the data in the file
-		if (Files.exists(customersPath)) {
-			try (BufferedReader in = new BufferedReader(new FileReader(customersFile))) {
+		try (BufferedReader in = new BufferedReader(new FileReader(customersFile))) {
 
-				String line = in.readLine();
+			String line = in.readLine();
 
-				while (line != null) {
-					String[] fields = line.split(FIELD_SEP);
-					Customer cust = new Customer(fields[0], fields[1], fields[2]);
-					customers.add(cust);
+			while (line != null) {
+				String[] fields = line.split(FIELD_SEP);
+				Customer cust = new Customer(fields[0], fields[1], fields[2]);
+				customers.add(cust);
 
-					line = in.readLine();
-				}
-
-			} catch (IOException e) {
-				System.out.println("Caught an IOException in getAll(). " + e);
-				return null;
+				line = in.readLine();
 			}
 
-		} else {
-			System.out.println("Customers file not found at " + customersPath.toAbsolutePath());
 		}
 
 		return customers;
 	}
 
 	@Override
-	public Customer get(String email) {
+	public Customer get(String email) throws IOException {
 		for (Customer c : customers) {
 			if (c.getEmail().equals(email)) {
 				return c;
@@ -65,19 +57,19 @@ public final class CustomerTextFile implements DAO<Customer> {
 	}
 
 	@Override
-	public boolean add(Customer c) {
+	public boolean add(Customer c) throws IOException {
 		customers.add(c);
 		return this.saveAll();
 	}
 
 	@Override
-	public boolean delete(Customer c) {
+	public boolean delete(Customer c) throws IOException {
 		customers.remove(c);
 		return this.saveAll();
 	}
 
 	@Override
-	public boolean update(Customer newCustomer) {
+	public boolean update(Customer newCustomer) throws IOException {
 		// get the old customer and remove it
 		Customer oldCustomer = this.get(newCustomer.getEmail());
 		int i = customers.indexOf(oldCustomer);
