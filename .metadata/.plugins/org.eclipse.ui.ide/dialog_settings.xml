@@ -50,6 +50,9 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts\ch16_ex2_ResourcesTester"/>
+			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts\ch16_ex1_ExceptionTester"/>
+			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts\ch15_ex1_CustomerManager"/>
 			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\book_apps\ch13_ProductLister"/>
 			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\book_apps\ch12_WordCounter"/>
 			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts\ch11_ex1_MonthSales"/>
@@ -67,9 +70,6 @@
 			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\book_apps\ch07_LineItem"/>
 			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts\ch07_ex1_Product"/>
 			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts\ch05_ex2_GuessNumber"/>
-			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts\ch05_ex1_FutureValue"/>
-			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\book_apps\ch05_FutureValueWithMethod"/>
-			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
