@@ -105,6 +105,9 @@ public class CustomerManagerApp {
 		} catch (IOException e) {
 			System.out.println("Error retrieving customer");
 			return;
+		} catch (NoSuchCustomerException e) {
+			System.out.println(e.getMessage());
+			return;
 		}
 
 		System.out.println();
