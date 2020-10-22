@@ -2,6 +2,7 @@ package bmdb.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -23,6 +24,18 @@ public class ActorDb {
 		return connection;
 	}
 
+	private Actor getActorFromResultSet(ResultSet rs) throws SQLException {
+		long id = rs.getLong("ID");
+		String firstName = rs.getString("FirstName");
+		String lName = rs.getString("LastName");
+		String gender = rs.getString("Gender");
+		String birthDate = rs.getString("BirthDate");
+
+		Actor actor = new Actor(id, firstName, lName, gender, LocalDate.parse(birthDate));
+
+		return actor;
+	}
+
 	public List<Actor> getAll() {
 		List<Actor> actorList = new ArrayList<>();
 
@@ -31,13 +44,7 @@ public class ActorDb {
 				ResultSet actors = stmt.executeQuery("SELECT * FROM Actor");) {
 
 			while (actors.next()) {
-				long id = actors.getLong("ID");
-				String firstName = actors.getString("FirstName");
-				String lastName = actors.getString("LastName");
-				String gender = actors.getString("Gender");
-				String birthDate = actors.getString("BirthDate");
-
-				Actor actor = new Actor(id, firstName, lastName, gender, LocalDate.parse(birthDate));
+				Actor actor = getActorFromResultSet(actors);
 
 				actorList.add(actor);
 			}
@@ -49,31 +56,112 @@ public class ActorDb {
 		return actorList;
 	}
 
-	public Actor get(String lastName) {
+	public Actor getActorByLastName(String lastName) {
 
-		String actorSelect = "SELECT * FROM ACTOR WHERE LastName ='" + lastName + "'";
+		String actorSelect = "SELECT * FROM ACTOR WHERE LastName = ?";
 
-		try (Connection con = getConnection();
-				Statement stmt = con.createStatement();
-				ResultSet actors = stmt.executeQuery(actorSelect);) {
+		try (Connection con = getConnection(); PreparedStatement ps = con.prepareStatement(actorSelect);) {
+
+			ps.setString(1, lastName);
+			ResultSet actors = ps.executeQuery();
 
 			if (actors.next()) {
-				long id = actors.getLong("ID");
-				String firstName = actors.getString("FirstName");
-				String lName = actors.getString("LastName");
-				String gender = actors.getString("Gender");
-				String birthDate = actors.getString("BirthDate");
+				Actor actor = getActorFromResultSet(actors);
 
-				Actor actor = new Actor(id, firstName, lName, gender, LocalDate.parse(birthDate));
+				actors.close();
 
 				return actor;
 			} else {
+				actors.close();
+
 				return null;
 			}
 
 		} catch (SQLException e) {
 			System.err.println("Caught exception. " + e);
 			return null;
+		}
+
+	}
+
+	public Actor get(long id) {
+
+		String actorSelect = "SELECT * FROM ACTOR WHERE ID = ?";
+
+		try (Connection con = getConnection(); PreparedStatement ps = con.prepareStatement(actorSelect);) {
+
+			ps.setLong(1, id);
+			ResultSet actors = ps.executeQuery();
+
+			if (actors.next()) {
+				Actor actor = getActorFromResultSet(actors);
+
+				actors.close();
+
+				return actor;
+			} else {
+
+				actors.close();
+
+				return null;
+			}
+
+		} catch (SQLException e) {
+			System.err.println("Caught exception. " + e);
+			return null;
+		}
+
+	}
+
+	public boolean add(Actor actor) {
+		String actorInsert = "INSERT INTO actor(FirstName, LastName, Gender, BirthDate) VALUES (?, ?, ?, ?)";
+
+		try (Connection con = getConnection(); PreparedStatement ps = con.prepareStatement(actorInsert)) {
+			ps.setString(1, actor.getFirstName());
+			ps.setString(2, actor.getLastName());
+			ps.setString(3, actor.getGender());
+			ps.setString(4, actor.getBirthDate().toString());
+
+			ps.executeUpdate();
+
+			return true;
+		} catch (SQLException e) {
+			System.err.println("Caught exception. " + e);
+			return false;
+		}
+	}
+
+	public boolean delete(long id) {
+		String actorDelete = "DELETE FROM actor WHERE ID = ?";
+
+		try (Connection con = getConnection(); PreparedStatement ps = con.prepareStatement(actorDelete);) {
+			ps.setLong(1, id);
+
+			ps.executeUpdate();
+
+			return true;
+		} catch (SQLException e) {
+			System.err.println("Caught exception. " + e);
+			return false;
+		}
+	}
+
+	public boolean update(Actor actor) {
+		String actorUpdate = "UPDATE actor SET FirstName = ?, LastName = ?, Gender = ?, BirthDate = ? WHERE ID = ?";
+
+		try (Connection con = getConnection(); PreparedStatement ps = con.prepareStatement(actorUpdate)) {
+			ps.setString(1, actor.getFirstName());
+			ps.setString(2, actor.getLastName());
+			ps.setString(3, actor.getGender());
+			ps.setString(4, actor.getBirthDate().toString());
+			ps.setLong(5, actor.getId());
+
+			ps.executeUpdate();
+
+			return true;
+		} catch (SQLException e) {
+			System.err.println("Caught exception. " + e);
+			return false;
 		}
 
 	}
