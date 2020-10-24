@@ -80,4 +80,10 @@ public class Product {
 		this.photoPath = photoPath;
 	}
 
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", vendorId=" + vendorId + ", partNumber=" + partNumber + ", name=" + name
+				+ ", price=" + price + ", unit=" + unit + ", photoPath=" + photoPath + "]";
+	}
+
 }

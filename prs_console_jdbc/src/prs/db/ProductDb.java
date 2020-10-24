@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import prs.business.Product;
+import prs.exception.PrsDataException;
 
 public class ProductDb {
 
@@ -50,8 +51,7 @@ public class ProductDb {
 			return products;
 
 		} catch (SQLException e) {
-			System.err.println("Error retrieving products. " + e);
-			return null;
+			throw new PrsDataException("Error retrieving products. Msg: " + e.getMessage());
 		}
 	}
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import prs.business.Product;
 import prs.db.ProductDb;
+import prs.exception.PrsDataException;
 
 public class PrsApp {
 
@@ -37,14 +38,18 @@ public class PrsApp {
 	}
 
 	private static void listProducts() {
-		ProductDb productDb = new ProductDb();
-		List<Product> products = productDb.getAll();
+		try {
+			ProductDb productDb = new ProductDb();
+			List<Product> products = productDb.getAll();
 
-		System.out.println("Products:");
-		for (Product product : products) {
-			System.out.println(product);
+			System.out.println("Products:");
+			for (Product product : products) {
+				System.out.println(product);
+			}
+			System.out.println();
+		} catch (PrsDataException e) {
+			System.err.println("Couldn't retrieve products. Msg: " + e.getMessage());
 		}
-		System.out.println();
 	}
 
 }
