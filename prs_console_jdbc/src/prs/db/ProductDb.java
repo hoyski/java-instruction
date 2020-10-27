@@ -2,6 +2,7 @@ package prs.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -49,6 +50,34 @@ public class ProductDb {
 			}
 
 			return products;
+
+		} catch (SQLException e) {
+			throw new PrsDataException("Error retrieving products. Msg: " + e.getMessage());
+		}
+	}
+
+	/**
+	 * Adds the given Product to the database
+	 * 
+	 * @param product The Product to add
+	 * @return true if the product is successfully added. Otherwise, false
+	 * @throws PrsDataException When there's an error communicating with the
+	 *                          database
+	 */
+	public boolean add(Product product) {
+		String insertSql = "INSERT INTO Product(VendorID, PartNumber, Name, Price, Unit, PhotoPath) VALUES(?, ?, ?, ?, ?, ?)";
+
+		try (Connection con = getConnection(); PreparedStatement ps = con.prepareStatement(insertSql)) {
+			ps.setInt(1, product.getVendorId());
+			ps.setString(2, product.getPartNumber());
+			ps.setString(3, product.getName());
+			ps.setDouble(4, product.getPrice());
+			ps.setString(5, product.getUnit());
+			ps.setString(6, product.getPhotoPath());
+
+			ps.executeUpdate();
+
+			return true;
 
 		} catch (SQLException e) {
 			throw new PrsDataException("Error retrieving products. Msg: " + e.getMessage());
