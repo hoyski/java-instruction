@@ -30,4 +30,5 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="prs.exception.PrsDataException"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java_misc.MathUtils"/>
 </qualifiedTypeNameHistroy>

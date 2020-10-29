@@ -1,5 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-    <typeInfo handle="=ch03_instruction/C:\/Program Files\/Java\/jdk-11.0.8\/lib\/jrt-fs.jar`java.sql=/module=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/11\/docs\/api\/=/&lt;java.sql(ResultSet.class[ResultSet" modifiers="1537" timestamp="1598731093302"/>
-    <typeInfo handle="=ch03_instruction/C:\/Program Files\/Java\/jdk-11.0.8\/lib\/jrt-fs.jar`java.sql=/module=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/11\/docs\/api\/=/&lt;java.sql(PreparedStatement.class[PreparedStatement" modifiers="1537" timestamp="1598731093302"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>
