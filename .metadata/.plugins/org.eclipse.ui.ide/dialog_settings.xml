@@ -51,6 +51,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts\ch04_ex4_FutureValue"/>
 			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts\ch22_ex1_BookCatalog"/>
 			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts\ch22_ex2_BookCatalog"/>
 			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts\ch16_ex3_CustomTester"/>
@@ -70,7 +71,6 @@
 			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts\ch08_ex2_Product"/>
 			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts\ch08_ex1_Product"/>
 			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\book_apps\ch08_Product"/>
-			<item value="C:\Users\hoysk\JavaDev\MurachBook\java\eclipse\ex_starts\ch07_ex3_AreaAndPerimeter"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>

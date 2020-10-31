@@ -15,37 +15,71 @@ public class PrsApp {
 		System.out.println();
 
 		System.out.println("COMMANDS");
+		System.out.println("login - Login");
+		System.out.println("logout - Logout");
 		System.out.println("prod_la - List all products");
 		System.out.println("prod_a - Add a new product");
 		System.out.println("user_la - List all users");
 		System.out.println("exit - Exit the application");
 		System.out.println();
 
+		User authenticatedUser = null;
+
 		String command = "";
 		while (!command.equalsIgnoreCase("exit")) {
 			command = Console.getString("Enter command: ");
 
-			switch (command.toLowerCase()) {
-			case "prod_la":
-				listProducts();
-				break;
+			if (command.equalsIgnoreCase("login")) {
+				authenticatedUser = login();
 
-			case "prod_a":
-				addProduct();
-				break;
+				if (authenticatedUser == null) {
+					System.out.println("Username/password not found");
+				} else {
+					System.out.println("Welcome, " + authenticatedUser.getFirstName());
+				}
+			} else if (command.equalsIgnoreCase("logout")) {
+				authenticatedUser = null;
+			} else if (authenticatedUser != null) {
 
-			case "user_la":
-				listUsers();
-				break;
+				switch (command.toLowerCase()) {
+				case "prod_la":
+					listProducts();
+					break;
 
-			case "exit":
-				// Nothing to do
-				break;
+				case "prod_a":
+					addProduct();
+					break;
 
-			default:
-				System.out.println("Invalid command");
-				break;
+				case "user_la":
+					listUsers();
+					break;
+
+				case "exit":
+					// Nothing to do
+					break;
+
+				default:
+					System.out.println("Invalid command");
+					break;
+				}
+			} else {
+				System.out.println("Must login to perform this action");
 			}
+		}
+	}
+
+	private static User login() {
+		try {
+			String userName = Console.getString("User Name: ");
+			String password = Console.getString("Password: ");
+
+			UserDb userDb = new UserDb();
+			User user = userDb.authenticateUser(userName, password);
+
+			return user;
+		} catch (PrsDataException e) {
+			System.err.println("Error logging in. Msg: " + e.getMessage());
+			return null;
 		}
 	}
 
